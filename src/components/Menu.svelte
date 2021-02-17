@@ -50,6 +50,12 @@
 .item.active .link{
     color: #8d2326;
 }
+
+@media only screen and (max-width: 1199px){
+	.menu{
+		display: none;
+	}
+}
 </style>
 
 <nav class="menu">

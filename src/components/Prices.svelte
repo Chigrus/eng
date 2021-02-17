@@ -102,6 +102,12 @@
         text-transform: none;
         font-size: 14px;
     }
+
+    @media only screen and (max-width: 1199px){
+        .block{
+            width: calc(100%/2 - 20px);
+        }
+    }
 </style>
 
 <div class="content">

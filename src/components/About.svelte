@@ -151,4 +151,13 @@
     :global(.edit:hover .btn){
         display: block;
     }
+
+    @media only screen and (max-width: 1199px){
+        .content{
+            padding: 0 45px;
+        }
+        .about{
+            padding-left: 40px;
+        }
+    }
 </style>

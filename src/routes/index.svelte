@@ -118,6 +118,17 @@
 .company{
 	margin-left: 20px;
 }
+
+@media only screen and (max-width: 1200px){
+	.work{
+		max-width: calc(100% - 20px);
+	}
+}
+@media only screen and (max-width: 1199px){
+	.wrap__prices::before{
+		background-size: cover;
+	}
+}
 </style>
 
 <svelte:head>
