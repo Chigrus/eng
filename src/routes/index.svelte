@@ -129,6 +129,14 @@
 		background-size: cover;
 	}
 }
+@media only screen and (max-width: 1023px){
+	.wrap__advantages{
+		background-size: cover;
+	}
+	.wrap__about{
+		padding-bottom: 40px;
+	}
+}
 </style>
 
 <svelte:head>

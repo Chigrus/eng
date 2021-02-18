@@ -160,4 +160,15 @@
             padding-left: 40px;
         }
     }
+    @media only screen and (max-width: 1023px){
+        .content{
+            flex-wrap: wrap;
+        }
+
+        .about{
+            width: 100%;
+            padding-left: 0;
+            margin-top: 40px;
+        }
+    }
 </style>
