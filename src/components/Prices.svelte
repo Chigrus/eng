@@ -108,6 +108,11 @@
             width: calc(100%/2 - 20px);
         }
     }
+    @media only screen and (max-width: 767px){
+        .title{
+            font-size: 18px;
+        }
+    }
 </style>
 
 <div class="content">

@@ -112,6 +112,12 @@
     transform: rotate(90deg);
     transform-origin: center center;
 }
+
+@media only screen and (max-width: 767px){
+    .advantage{
+        padding: 85px 20px 60px 20px;
+    }
+}
 </style>
 
 <div class="content">
