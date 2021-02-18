@@ -16,6 +16,12 @@
 	background-repeat: no-repeat;
 	background-size: 24px auto;
 }
+
+@media only screen and (max-width: 539px){
+    .phone{
+        display: none;
+    }
+}
 </style>
 
 <a href="tel:{phonenumber}" class="phone">{phone}</a>

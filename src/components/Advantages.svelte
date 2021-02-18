@@ -118,6 +118,11 @@
         padding: 85px 20px 60px 20px;
     }
 }
+@media only screen and (max-width: 539px){
+    .advantage{
+        width: 100%;
+    }
+}
 </style>
 
 <div class="content">

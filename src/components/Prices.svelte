@@ -113,6 +113,12 @@
             font-size: 18px;
         }
     }
+
+    @media only screen and (max-width: 539px){
+        .block{
+            width: calc(100% - 20px);
+        }
+    }
 </style>
 
 <div class="content">

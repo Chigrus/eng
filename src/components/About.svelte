@@ -171,4 +171,15 @@
             margin-top: 40px;
         }
     }
+    @media only screen and (max-width: 539px){
+        .title{
+            font-size: 28px;
+        }
+        .content{
+            padding: 0 15px;
+        }
+        .photo{
+            width: 100%;
+        }
+    }
 </style>
