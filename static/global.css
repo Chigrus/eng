@@ -36,18 +36,18 @@ code {
 
 @font-face {
 	font-family: Carlito-Regular;
-	src: url(fonts/carlito/Carlito-Regular.ttf);
+	src: url(fonts/Carlito-Regular.ttf);
 	font-display: swap;
 }
 
 @font-face {
 	font-family: Carlito-Bold;
-	src: url(fonts/carlito/Carlito-Bold.ttf);
+	src: url(fonts/Carlito-Bold.ttf);
 	font-display: swap;
 }
 
 @font-face {
 	font-family: Cambria;
-	src: url(fonts/cambria/cambria.ttc);
+	src: url(fonts/cambria.ttc);
 	font-display: swap;
 }
