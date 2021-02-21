@@ -22,6 +22,8 @@
 	import TopPrices from '../components/TopPrices.svelte';
 	import Prices from '../components/Prices.svelte';
 	import PostEditor from '../components/PostEditor.svelte';
+	import TopReviews from '../components/TopReviews.svelte';
+	import Reviews from '../components/Reviews.svelte';
 	export let menu;
 	export let general;
 	export let content;
@@ -88,6 +90,9 @@
 	opacity: 0.25;
 }
 
+.wrap__reviews{
+	padding: 90px 0;
+}
 .flyheader{
 	position: fixed;
     z-index: 100;
@@ -175,5 +180,11 @@
 	<div class="work">
 		<TopPrices on:getDat={(event) => { masspopup = event.detail; }} {topprices} />
 		<Prices on:getDat={(event) => { masspopup = event.detail; }} {prices} />
+	</div>
+</div>
+<div class="wrap wrap__reviews">
+	<div class="work">
+		<TopReviews />
+		<Reviews />
 	</div>
 </div>
