@@ -1,12 +1,8 @@
 <script>
-    //export let topprices;
-    //import { isAdmin } from '../store.js';
-    //import BtnEdit from '../components/BtnEdit.svelte';
+    export let topreviews;
+    import { isAdmin } from '../store.js';
+    import BtnEdit from '../components/BtnEdit.svelte';
 </script>
-
-<div class="content">
-    ОТЗЫВЫ О МОЕЙ РЕПЕТИТОРСКОЙ РАБОТЕ:   
-</div>
 
 <style>
     .content{
@@ -16,4 +12,61 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .title{
+        position: relative;
+        float: left;
+        font-family: Carlito-Bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #8d2326;
+        box-sizing: border-box;
+        padding-left: 70px;
+        padding-right: 30px;
+    }
+
+    .title::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 50px;
+        height: 1px;
+        background-color: #8d2326;
+        margin-top: -2px;
+    }
+
+    .line{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .text{
+        position: relative;
+        width: 100%;
+        max-width: 840px;
+        color: #010101;
+        font-size: 22px;
+        line-height: 1.3em;
+        font-family: Cambria;
+        text-align: center;
+        box-sizing: border-box;
+    }
 </style>
+
+<div class="content">
+    {#each topreviews as topreview}
+        <div class="title edit">
+            {@html topreview.title}
+            {#if $isAdmin}<BtnEdit on:getDat datablock={topreview.title} idline={topreview.id} field={'title'} tedit={'light'} />{/if}
+        </div>
+        <div class="line">
+            <div class="text edit">
+                {@html topreview.text}
+                {#if $isAdmin}<BtnEdit on:getDat datablock={topreview.text} idline={topreview.id} field={'text'} tedit={'light'} />{/if}
+            </div>
+        </div>
+    {/each}    
+</div>

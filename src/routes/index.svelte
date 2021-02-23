@@ -24,6 +24,9 @@
 	import PostEditor from '../components/PostEditor.svelte';
 	import TopReviews from '../components/TopReviews.svelte';
 	import Reviews from '../components/Reviews.svelte';
+
+	import Carousel from '@beyonk/svelte-carousel';
+
 	export let menu;
 	export let general;
 	export let content;
@@ -31,10 +34,14 @@
 	let advantages = content.filter(dataline => dataline.category === 'advantages');
 	let topprices = content.filter(dataline => dataline.category === 'topprices');
 	let prices = content.filter(dataline => dataline.category === 'prices');
+	let topreviews = content.filter(dataline => dataline.category === 'topreviews');
+	let reviews = content.filter(dataline => dataline.category === 'reviews');
 	let phone = general[0].phone;
 	let companyname = general[0].name;
 	let companysubname = general[0].subname;
 	let masspopup = {};
+
+	
 </script>
 <style>
 .wrap{
@@ -124,6 +131,68 @@
 	margin-left: 20px;
 }
 
+.slider{
+	position: relative;
+	z-index: 1;
+	float: left;
+	width: 100%;
+	height: 500px;
+	background: rgba(255,255,255,1);
+	margin-top: 50px;
+	box-sizing: border-box;
+	padding: 60px 300px;
+	padding-bottom: 40px;
+	overflow: hidden;
+}
+:global(.slider .carousel){
+	box-sizing: border-box;
+  	border: 1px solid rgba(0,0,0,0.1);
+}
+:global(.slider .carousel::before){
+	content: '';
+	position: absolute;
+	z-index: 0;
+	top: -60px;
+	right: -80px;
+	width: 260px;
+	height: 260px;
+	background-image: url(/svg/bgphotos.svg);
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 50px 50px;
+}
+:global(.slider .carousel .left),
+:global(.slider .carousel .right){
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #8d2326;
+	background-repeat: no-repeat;
+	background-position: 16px center;
+	background-image: url(/svg/reviews/next.svg);
+	background-size: 32px auto;
+}
+
+:global(.slider .carousel .left){
+	left: -175px;
+	transform: rotate(180deg);
+}
+:global(.slider .carousel .right){
+	right: -175px;
+}
+:global(.slider .carousel > ul){
+	bottom: -50px;
+}
+:global(.slider .carousel > ul li),
+:global(.slider .carousel > ul li:hover){
+	background-color: rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+:global(.slider .carousel > ul li.active){
+	background-color: #8d2326;
+}
+
 @media only screen and (max-width: 1200px){
 	.work{
 		max-width: calc(100% - 20px);
@@ -184,7 +253,11 @@
 </div>
 <div class="wrap wrap__reviews">
 	<div class="work">
-		<TopReviews />
-		<Reviews />
+		<TopReviews on:getDat={(event) => { masspopup = event.detail; }} {topreviews} />
+		<div class="slider">
+			<Carousel perPage=1>
+				<Reviews {reviews} />
+			</Carousel>
+		</div>
 	</div>
 </div>

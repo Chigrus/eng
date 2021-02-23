@@ -1,19 +1,15 @@
 <script>
-    //export let topprices;
-    //import { isAdmin } from '../store.js';
-    //import BtnEdit from '../components/BtnEdit.svelte';
+  export let reviews;
 </script>
 
-<div class="content">
-    111111   
-</div>
+{#each reviews as review}
+  <div class="slide-content" style="background-image: url({review.image})"></div>
+{/each} 
 
 <style>
-    .content{
-        float: left;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.slide-content {
+	width: 100%;
+	height: 400px;
+	background-color: #fff;
+}
 </style>
