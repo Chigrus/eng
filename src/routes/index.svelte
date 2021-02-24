@@ -22,6 +22,7 @@
 	import TopPrices from '../components/TopPrices.svelte';
 	import Prices from '../components/Prices.svelte';
 	import PostEditor from '../components/PostEditor.svelte';
+	import Alert from '../components/Alert.svelte';
 	import TopReviews from '../components/TopReviews.svelte';
 	import Reviews from '../components/Reviews.svelte';
 
@@ -40,8 +41,8 @@
 	let companyname = general[0].name;
 	let companysubname = general[0].subname;
 	let masspopup = {};
+	let massdel = {};
 
-	
 </script>
 <style>
 .wrap{
@@ -219,6 +220,7 @@
 </svelte:head>
 
 <PostEditor {masspopup} bind:urlI={about[0].image} />
+<Alert {massdel} />
 
 <div class="flyheader">
 	<div class="work work__header">
@@ -256,7 +258,7 @@
 		<TopReviews on:getDat={(event) => { masspopup = event.detail; }} {topreviews} />
 		<div class="slider">
 			<Carousel perPage=1>
-				<Reviews {reviews} />
+				<Reviews on:delDat={(event, args) => { massdel = event.detail; }} {reviews} />
 			</Carousel>
 		</div>
 	</div>
