@@ -4,10 +4,7 @@
     import Editor from 'cl-editor/src/Editor.svelte';
     import Cropper from "svelte-easy-crop";
 
-    //let cropSize = {424, 490};
-    let cropSize = {width: 424, height: 490};
     export let masspopup;
-    export let urlI;
 
     let imgf, imgn, cropData;
 
@@ -30,10 +27,14 @@
         img.src = imgf;
         img.onload = () => {
             const canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = masspopup.crop.width;
+            canvas.height = masspopup.crop.height;
             const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, x, y, width, height, 0, 0, width, height);
+            ctx.beginPath();
+            ctx.rect(0, 0, masspopup.crop.width, masspopup.crop.height);
+            ctx.fillStyle = "#fff";
+            ctx.fill();
+            ctx.drawImage(img, x, y, width, height, 0, 0, masspopup.crop.width, masspopup.crop.height);
             document.body.appendChild(canvas);
             canvas.toBlob(blob => {
                 fetch('/savedata?id=' + dataMas.id, {
@@ -43,8 +44,8 @@
                     },
                     body: blob
                 }).then(response => response.json()).then(result => {
-                    urlI = result.url;
                     closePopup();
+                    location.reload();
                 });
             }, 'image/jpeg');
         };
@@ -83,8 +84,11 @@
                          image={imgf}
                          crop={{ x: 0, y: 0 }}
                          zoom={1}
-                         {cropSize}
+                         minZoom={0.8}
+                         maxZoom={2}
+                         cropSize = {masspopup.crop}
                          zoomSpeed={0.1}
+                         restrictPosition={false}
                          on:cropcomplete={(event) => cropData = event.detail.pixels}
                      />
                  </div>

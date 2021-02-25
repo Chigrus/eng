@@ -258,7 +258,7 @@
 		<TopReviews on:getDat={(event) => { masspopup = event.detail; }} {topreviews} />
 		<div class="slider">
 			<Carousel perPage=1>
-				<Reviews on:delDat={(event, args) => { massdel = event.detail; }} {reviews} />
+				<Reviews on:delDat={(event, args) => { massdel = event.detail; }} on:getDat={(event) => { masspopup = event.detail; }} {reviews} />
 			</Carousel>
 		</div>
 	</div>

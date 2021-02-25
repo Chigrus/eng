@@ -29,5 +29,6 @@
         background-position: center center;
         background-size: contain;
         cursor: pointer;
+        display: none;
     }
 </style>

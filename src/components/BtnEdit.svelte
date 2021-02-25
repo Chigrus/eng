@@ -6,6 +6,7 @@
     export let field = '';
     export let tedit = '';
     export let timage = false;
+    export let cropS = {};
 
     let ted = [];
 
@@ -29,6 +30,7 @@
             edittext: datablock,
             type: ted,
             image: timage,
+            crop: cropS,
             popup: true
         });
     }

@@ -9,7 +9,7 @@
     {#each about as aboutline}
         <div class="photo edit">
             <img src={aboutline.image} alt="Марина Науфиловна" />
-            {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.image} idline={aboutline.id} field={'image'} timage={true} />{/if}
+            {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.image} idline={aboutline.id} field={'image'} timage={true} cropS = {{width: 424, height: 490}} />{/if}
         </div>
         <div class="about">
                 <div class="subtitle edit">
