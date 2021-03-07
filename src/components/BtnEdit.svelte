@@ -53,4 +53,4 @@
 }
 </style>
 
-<span class="btn" on:click="{clickFn}"></span>
+<span class="btn" on:click="{clickFn}" title="Редактировать запись"></span>
