@@ -24,9 +24,10 @@
 	import PostEditor from '../components/PostEditor.svelte';
 	import Alert from '../components/Alert.svelte';
 	import PostAdd from '../components/PostAdd.svelte';
-	import TopCallBack from '../components/TopCallBack.svelte';
 	import TopReviews from '../components/TopReviews.svelte';
 	import Reviews from '../components/Reviews.svelte';
+	import TopCallBack from '../components/TopCallBack.svelte';
+	import CallBack from '../components/CallBack.svelte';
 
 	import Carousel from '@beyonk/svelte-carousel';
 
@@ -276,5 +277,6 @@
 <div class="wrap wrap__prices">
 	<div class="work">
 		<TopCallBack on:getDat={(event) => { masspopup = event.detail; }} {topcallback} />
+		<CallBack />
 	</div>
 </div>
