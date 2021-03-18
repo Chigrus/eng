@@ -24,6 +24,7 @@
 	import PostEditor from '../components/PostEditor.svelte';
 	import Alert from '../components/Alert.svelte';
 	import PostAdd from '../components/PostAdd.svelte';
+	import TopCallBack from '../components/TopCallBack.svelte';
 	import TopReviews from '../components/TopReviews.svelte';
 	import Reviews from '../components/Reviews.svelte';
 
@@ -38,6 +39,7 @@
 	let prices = content.filter(dataline => dataline.category === 'prices');
 	let topreviews = content.filter(dataline => dataline.category === 'topreviews');
 	let reviews = content.filter(dataline => dataline.category === 'reviews');
+	let topcallback = content.filter(dataline => dataline.category === 'topcallback');
 	let phone = general[0].phone;
 	let companyname = general[0].name;
 	let companysubname = general[0].subname;
@@ -269,5 +271,10 @@
 				/>
 			</Carousel>
 		</div>
+	</div>
+</div>
+<div class="wrap wrap__prices">
+	<div class="work">
+		<TopCallBack on:getDat={(event) => { masspopup = event.detail; }} {topcallback} />
 	</div>
 </div>
