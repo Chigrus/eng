@@ -1,8 +1,7 @@
 <script>
-    //export let topcallback;
     import Button from '../components/Button.svelte';
     import ControlInput from '../components/ControlInput.svelte';
-    let un = '';
+    import ControlTextarea from '../components/ControlTextarea.svelte';
 </script>
 
 <style>
@@ -22,16 +21,6 @@
     .callbackline.rb{
        justify-content: flex-end;
     }
-    .textmessage{
-        width: 100%;
-        height: 140px;
-        box-sizing: border-box;
-        padding: 20px;
-        resize: none;
-        outline: none;
-        font-size: 18px;
-    }
-
     .cbinp{
         width: calc(100%/2 - 15px);
     }
@@ -51,7 +40,7 @@
     </div>
   </div>
   <div class="callbackline">
-      <textarea class="textmessage" placeholder="Текст сообщения"></textarea>
+      <ControlTextarea placeholder="Текст сообщения" />
   </div>
   <div class="callbackline rb">
     <Button title="отправить сообщение" />
