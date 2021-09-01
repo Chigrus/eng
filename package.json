@@ -12,7 +12,9 @@
     "cl-editor": "^2.2.0",
     "compression": "^1.7.1",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
+    "nodemailer": "^6.6.2",
     "sirv": "^1.0.0",
     "svelte-easy-crop": "^1.0.3"
   },

@@ -1,11 +1,15 @@
 <script>
     export let text = '';
     export let placeholder = '';
+    export let isError = false;
 
     let ph = placeholder;
 
     function delPlaceholder(){
         ph = '';
+        if (isError){
+            isError = !isError;
+        }
     }
 
     function outfocus(){
@@ -24,7 +28,11 @@
         resize: none;
         outline: none;
         font-size: 18px;
+        font-family: Carlito;
+    }
+    .textcontrol.error{
+        border-color: red;
     }
 </style>
 
-<textarea class="textcontrol" placeholder={ph} bind:value={text} on:focus="{delPlaceholder}" on:blur="{outfocus}"></textarea>
+<textarea class="textcontrol" class:error={isError} placeholder={ph} bind:value={text} on:focus="{delPlaceholder}" on:blur="{outfocus}"></textarea>

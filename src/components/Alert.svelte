@@ -22,13 +22,29 @@
             location.reload();
         });
     }
+
+    function modifyf(){
+        fetch('/reviewmodify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                data: massdel
+            })
+        })
+        .then(response => response.json())
+        .then(data => {               
+            location.reload();
+        });
+    }
 </script>
 
 <div class="glass" class:open={massdel.alert}>
     <div class="alert">
         <div class="message">{massdel.title}</div>
         <div class="line">
-            <Button title='Да' on:click={delf} />
+            <Button title='Да' on:click={massdel.event=='del' ? delf : modifyf} />
             <Button title='Нет' on:click={cancelf} />
         </div>
     </div>

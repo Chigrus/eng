@@ -3,7 +3,7 @@ import {init} from '@lib/sql';
 export async function post(req, res) {
     const {table, delid} = req.body.data;
     const {connection} = await init();
-    connection.query(`DELETE FROM ${table} WHERE id = ?`, [delid], (err, result) => {
+    connection.query(`UPDATE ${table} SET status = true WHERE id = ?`, [delid], (err, result) => {
         if(err) {
             console.log(err);
             res.writeHead(500);

@@ -7,7 +7,7 @@
 
 <div class="content">
     {#each about as aboutline}
-        <div class="photo edit">
+        <div class="{aboutline.category == 'about' ? 'photo edit' : 'photo edit experience'}">
             <img src={aboutline.image} alt="Марина Науфиловна" />
             {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.image} idline={aboutline.id} field={'image'} timage={true} cropS = {{width: 424, height: 490}} />{/if}
         </div>
@@ -20,15 +20,16 @@
                     {@html aboutline.title}
                     {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.title} idline={aboutline.id} field={'title'} tedit={'light'} />{/if}
                 </div>
-                <div class="text edit">
+                <div class="{aboutline.category == 'about' ? 'text edit' : 'text edit experience'}">
                     {@html aboutline.text}
                     {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.text} idline={aboutline.id} field={'text'} tedit={'full'} />{/if}
                 </div>
+                {#if aboutline.category == 'about'}
                 <div class="info edit">
                     {@html aboutline.customfield}
                     {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.customfield} idline={aboutline.id} field={'customfield'} tedit={'light'} />{/if}
                 </div>
-            <div class="line"><Button title='Запись на урок' /></div>
+            <div class="line"><Button title='Запись на урок' /></div>{/if}
         </div>
     {/each}
 </div>
@@ -69,6 +70,20 @@
         max-width: 100%;
         height: auto;
         border-radius: 5px;
+    }
+
+    .photo.experience img{
+        border-radius: 0;
+    }
+
+    .photo.experience:after{
+        content: '';
+        position: absolute;
+        bottom: 40px;
+        right: -27px;
+        width: 336px;
+        height: 382px;
+        background: url(/img/bg_photo.jpg);
     }
     
     .about{
@@ -120,6 +135,10 @@
         font-size: 18px;
         line-height: 1.3em;
         border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .text.experience{
+        border-bottom: 0;
     }
     
     :global(.text p) {
