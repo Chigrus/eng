@@ -47,6 +47,8 @@
 	import ContentSchoolkid from '../components/ContentSchoolkid.svelte';
 	import TopTeaching from '../components/TopTeaching.svelte';
 	import Teaching from '../components/Teaching.svelte';
+	import QuoteTeaching from '../components/QuoteTeaching.svelte';
+	import TextTeaching from '../components/TextTeaching.svelte';
 
 	import Carousel from '@beyonk/svelte-carousel';
 
@@ -75,6 +77,8 @@
 	let experience = content.filter(dataline => dataline.category === 'experience');
 	let topteaching = content.filter(dataline => dataline.category === 'topteaching');
 	let teachings = content.filter(dataline => dataline.category === 'teaching');
+	let quoteteaching = content.filter(dataline => dataline.category === 'quoteteaching');
+	let textteaching = content.filter(dataline => dataline.category === 'textteaching');
 	let phone = general[0].phone;
 	let companyname = general[0].name;
 	let companysubname = general[0].subname;
@@ -187,6 +191,21 @@
 		<Teaching on:getDat={(event) => { masspopup = event.detail; }} {teachings} />
 	</div>
 </div>
+<div class="wrap">
+	<div class="work">
+		<QuoteTeaching on:getDat={(event) => { masspopup = event.detail; }} {quoteteaching} />
+	</div>
+</div>
+<div class="wrap wrap__textteaching">
+	<div class="work">
+		<TextTeaching on:getDat={(event) => { masspopup = event.detail; }} {textteaching} />
+	</div>
+</div>
+<div class="wrap wrap__footer">
+	<div class="work">
+		<div class="footer">© 2021 www.engwell.ru</div>
+	</div>
+</div>
 
 <style>
 	.wrap{
@@ -264,11 +283,18 @@
 		padding: 90px 0;
 		background-color: #000000;
 	}
-	.wrap__prices .work{
+
+	.wrap__footer{
+		padding: 30px 0;
+		background-color: #000000;
+	}
+	.wrap__prices .work,
+	.wrap__footer .work{
 		position: relative;
 		z-index: 1;
 	}
-	.wrap__prices::before{
+	.wrap__prices::before,
+	.wrap__footer::before{
 		content: '';
 		position: absolute;
 		z-index: 0;
@@ -283,6 +309,14 @@
 		opacity: 0.25;
 	}
 	
+	.footer{
+		float: left;
+		width: 100%;
+		box-sizing: border-box;
+		color: #fff;
+		font-size: 16px;
+		text-align: center;
+	}
 	.wrap__reviews{
 		padding: 90px 0;
 	}
@@ -446,6 +480,11 @@
 		padding-top: 54px;
 		padding-left: 100px;
 	}
+
+	.wrap__textteaching{
+		padding-bottom: 75px;
+	}
+
 	@media only screen and (max-width: 1200px){
 		.work{
 			max-width: calc(100% - 20px);
