@@ -52,4 +52,10 @@
     height: 2px;
     background-color: #ff0000;
 }
+
+@media only screen and (max-width: 479px){
+    .schoolkid__item{
+        width:  calc(100% - 40px);
+    }
+}
 </style>

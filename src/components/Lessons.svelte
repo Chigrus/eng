@@ -33,6 +33,7 @@
     background-color: rgba(0,0,0,0.1);
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: cover;
 }
 .text{
     position: relative;
@@ -41,5 +42,11 @@
     box-sizing: border-box;
     padding: 30px 20px;
     font-size: 18px;
+}
+
+@media only screen and (max-width: 1023px){
+    .text{
+        font-size: 16px;
+    }  
 }
 </style>

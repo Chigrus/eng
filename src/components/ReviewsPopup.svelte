@@ -96,8 +96,10 @@
 }
 .popup{
     position: relative;
-    width: 100%;
+    width: calc(100% - 40px);
     max-width: 760px;
+    height: calc(100vh - 40px);
+    max-height: 640px;
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -118,7 +120,8 @@
 .bgpopup{
     float: left;
     width: 320px;
-    height: 640px;
+    height: 100%;
+    max-height: 640px;
     background-image: url(/img/bgreview.jpg);
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -126,7 +129,8 @@
 .form{
     float: left;
     width: calc(100% - 320px);
-    height: 640px;
+    height: 100%;
+    max-height: 640px;
     box-sizing: border-box;
     padding: 40px;
 }
@@ -163,9 +167,19 @@
     font-size: 16px;
 }
 :global(.line .textcontrol){
-    height: 380px;
+    height: calc(100vh - 293px);
+    max-height: 387px;
     padding: 10px;
     border: 1px solid rgba(0,0,0,0.2);
     font-size: 16px;
+}
+
+@media only screen and (max-width: 767px){
+    .bgpopup{
+        display: none;
+    }  
+    .form{
+        width: 100%;
+    } 
 }
 </style>

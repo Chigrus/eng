@@ -101,4 +101,35 @@
         color: #000;
         line-height: 1.3em;
     }
+    @media only screen and (max-width: 1023px){
+        .block{
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 0;
+            padding-bottom: 25px;
+        }
+        .block:nth-child(2){
+            padding-left: 70px;
+            border: none;
+            border-top: 1px solid rgba(0,0,0,0.15);
+            border-bottom: 1px solid rgba(0,0,0,0.15);
+            width:100%;
+            margin: 20px 0;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .block:nth-child(2):before{
+            top: -5px;
+            left: 50%;
+            margin-left: -5px;
+        }
+
+        .block:nth-child(2):after{
+            top: auto;
+            right: auto;
+            bottom: -5px;
+            left: 50%;
+            margin-left: -5px;
+        }
+    }
 </style>

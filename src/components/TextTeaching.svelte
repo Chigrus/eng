@@ -49,4 +49,25 @@
     .text:nth-child(2){
         padding-left: 50px;
     }
+    @media only screen and (max-width: 1023px){
+        .text{
+            width: 100%;
+        }  
+        .text:nth-child(1){
+            padding-right: 0;
+            border-right: none;
+            border-bottom: 1px solid rgba(0,0,0,0.15);
+        } 
+        .text:nth-child(1)::before{
+            top: auto;
+            bottom: -5px;
+            right: auto;
+            left: 50%;
+            margin-top: 0;
+            margin-left: -5px;
+        }
+        .text:nth-child(2){
+            padding-left: 0;
+        }
+    }
 </style>

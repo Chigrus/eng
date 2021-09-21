@@ -4,6 +4,21 @@
     import BtnEdit from '../components/BtnEdit.svelte';
 </script>
 
+<div class="content">
+    {#each prices as price}
+        <div class="block">
+            <div class="title edit">
+                {@html price.title}
+                {#if $isAdmin}<BtnEdit on:getDat datablock={price.title} idline={price.id} field={'title'} tedit={'light'} />{/if}
+            </div>
+            <div class="textprices edit">
+                {@html price.text}
+                {#if $isAdmin}<BtnEdit on:getDat datablock={price.text} idline={price.id} field={'text'} tedit={'full'} />{/if}
+            </div>
+        </div>
+    {/each}  
+</div>
+
 <style>
     .content{
         float: left;
@@ -114,24 +129,9 @@
         }
     }
 
-    @media only screen and (max-width: 539px){
+    @media only screen and (max-width: 639px){
         .block{
             width: calc(100% - 20px);
         }
     }
 </style>
-
-<div class="content">
-    {#each prices as price}
-        <div class="block">
-            <div class="title edit">
-                {@html price.title}
-                {#if $isAdmin}<BtnEdit on:getDat datablock={price.title} idline={price.id} field={'title'} tedit={'light'} />{/if}
-            </div>
-            <div class="textprices edit">
-                {@html price.text}
-                {#if $isAdmin}<BtnEdit on:getDat datablock={price.text} idline={price.id} field={'text'} tedit={'full'} />{/if}
-            </div>
-        </div>
-    {/each}  
-</div>

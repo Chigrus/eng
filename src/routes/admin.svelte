@@ -53,7 +53,7 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                //goto('/');              
+                goto('/');              
             });
         }
     }

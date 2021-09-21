@@ -80,4 +80,10 @@
         font-family: Carlito-Regular;
         line-height: 1.2em;
     }
+    @media only screen and (max-width: 767px){
+        .skill{
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
 </style>

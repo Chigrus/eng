@@ -49,6 +49,11 @@
 	import Teaching from '../components/Teaching.svelte';
 	import QuoteTeaching from '../components/QuoteTeaching.svelte';
 	import TextTeaching from '../components/TextTeaching.svelte';
+	import TopDocs from '../components/TopDocs.svelte';
+	import Docs from '../components/Docs.svelte';
+	import TopFaq from '../components/TopFaq.svelte';
+	import Faq from '../components/Faq.svelte';
+	import AboutFooter from '../components/AboutFooter.svelte';
 
 	import Carousel from '@beyonk/svelte-carousel';
 
@@ -79,7 +84,13 @@
 	let teachings = content.filter(dataline => dataline.category === 'teaching');
 	let quoteteaching = content.filter(dataline => dataline.category === 'quoteteaching');
 	let textteaching = content.filter(dataline => dataline.category === 'textteaching');
+	let topdocs = content.filter(dataline => dataline.category === 'topdocs');
+	let docs = content.filter(dataline => dataline.category === 'docs');
+	let topfaq = content.filter(dataline => dataline.category === 'topfaq');
+	let faq = content.filter(dataline => dataline.category === 'faq');
+	let aboutfooter = content.filter(dataline => dataline.category === 'aboutfooter');
 	let phone = general[0].phone;
+	let mail = general[0].email;
 	let companyname = general[0].name;
 	let companysubname = general[0].subname;
 	let masspopup = {};
@@ -164,7 +175,7 @@
 	<div class="work">
 		<TopLessons on:getDat={(event) => { masspopup = event.detail; }} {toplessons} />
 		<div class="slider_lessons">
-			<Carousel perPage=3>
+			<Carousel perPage={{ 1200: 3, 768: 2 }}>
 				<Lessons on:getDat={(event) => { masspopup = event.detail; }} {lessons} />
 			</Carousel>
 		</div>
@@ -199,6 +210,27 @@
 <div class="wrap wrap__textteaching">
 	<div class="work">
 		<TextTeaching on:getDat={(event) => { masspopup = event.detail; }} {textteaching} />
+	</div>
+</div>
+<div class="wrap wrap__lessons">
+	<div class="work">
+		<TopDocs on:getDat={(event) => { masspopup = event.detail; }} {topdocs} />
+		<div class="slider_docs">
+			<Carousel perPage={{ 1200: 3, 768: 2 }}>
+				<Docs on:getDat={(event) => { masspopup = event.detail; }} {docs} />
+			</Carousel>
+		</div>
+	</div>
+</div>
+<div class="wrap wrap__prices">
+	<div class="work">
+		<TopFaq on:getDat={(event) => { masspopup = event.detail; }} {topfaq} />
+		<Faq on:getDat={(event) => { masspopup = event.detail; }} {faq} />
+	</div>
+</div>
+<div class="wrap wrap__about">
+	<div class="work">
+		<AboutFooter on:getDat={(event) => { masspopup = event.detail; }} {aboutfooter} {phone} {mail} />
 	</div>
 </div>
 <div class="wrap wrap__footer">
@@ -469,6 +501,56 @@
 	:global(.slider_lessons .carousel .slides > div){
 		display: flex;
 	}
+
+	.slider_docs{
+		position: relative;
+		z-index: 1;
+		float: left;
+		width: 100%;
+		margin-top: 50px;
+		box-sizing: border-box;
+		padding-bottom: 50px;
+	}
+
+	:global(.slider_docs .carousel .left),
+	:global(.slider_docs .carousel .right){
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		cursor: pointer;
+		background-color: #8d2326;
+		background-repeat: no-repeat;
+		background-position: 16px center;
+		background-image: url(/svg/reviews/next.svg);
+		background-size: 32px auto;
+	}
+	
+	:global(.slider_docs .carousel .left){
+		left: -75px;
+		transform: rotate(180deg);
+	}
+	:global(.slider_docs .carousel .right){
+		right: -75px;
+	}
+	:global(.slider_docs .carousel > ul){
+		bottom: -50px;
+	}
+	:global(.slider_docs .carousel > ul li){
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+	}
+	:global(.slider_docs .carousel > ul li),
+	:global(.slider_docs .carousel > ul li:hover){
+		background-color: rgba(0,0,0,0.2);
+		cursor: pointer;
+	}
+	:global(.slider_docs .carousel > ul li.active){
+		background-color: #8d2326;
+	}
+	:global(.slider_docs .carousel .slides > div){
+		display: flex;
+	}
 	.schoolkid__left{
 		float: left;
 		width: 460px;
@@ -485,6 +567,15 @@
 		padding-bottom: 75px;
 	}
 
+	@media only screen and (max-width: 1365px){
+		.wrap__lessons .work{
+			max-width: calc(100% - 200px);
+		}
+		.wrap__advantages, .wrap__lessons{
+			background-size: cover;
+		}
+	}
+
 	@media only screen and (max-width: 1200px){
 		.work{
 			max-width: calc(100% - 20px);
@@ -494,6 +585,19 @@
 		.wrap__prices::before{
 			background-size: cover;
 		}
+		:global(.slider .carousel .left){
+			left: -75px;
+			transform: rotate(180deg);
+		}
+		:global(.slider .carousel .right){
+			right: -75px;
+		}
+		.schoolkid__right{
+			padding-left: 50px;
+		}
+		.slider{
+			padding: 150px;
+		}
 	}
 	@media only screen and (max-width: 1023px){
 		.wrap__advantages{
@@ -501,6 +605,65 @@
 		}
 		.wrap__about{
 			padding-bottom: 40px;
+		}
+		.schoolkid__left{
+			width: 100%;
+			padding: 0 20px;
+			box-sizing: border-box;
+		}
+		.schoolkid__right{
+			width: 100%;
+			padding-top: 0;
+			padding-left: 0;
+			margin-top: 40px;
+		}
+	}
+	@media only screen and (max-width: 767px){
+		.slider{
+			padding: 75px;
+		}
+	}
+
+	@media only screen and (max-width: 639px){
+		.wrap .slider{
+			padding: 75px 20px;
+		}
+
+		:global(.wrap .slider .carousel .left){
+			left: -20px;
+		}
+		:global(.wrap .slider .carousel .right){
+			right: -20px;
+		}
+
+		.addReview{
+			left: 0;
+			margin-left: 0;
+		}
+		.wrap__lessons .work{
+			max-width: calc(100% - 160px);
+		}
+
+		:global(.slider_docs .carousel .left){
+			left: -20px;
+		}
+		:global(.slider_docs .carousel .right){
+			right: -20px;
+		}
+	}
+
+	@media only screen and (max-width: 539px){
+		:global(.wrap .slider .carousel .left),
+		:global(.wrap .slider .carousel .right),
+		:global(.slider_docs .carousel .left),
+		:global(.slider_docs .carousel .right),
+		:global(.slider_lessons .carousel .left),
+		:global(.slider_lessons .carousel .right){
+			display: none;
+		}
+
+		.wrap__lessons .work{
+			max-width: calc(100% - 40px);
 		}
 	}
 	</style>

@@ -189,6 +189,11 @@
             padding-left: 0;
             margin-top: 40px;
         }
+
+        .photo.experience:after{
+            bottom: -10px;
+            right: -17px;
+        }
     }
     @media only screen and (max-width: 539px){
         .title{
@@ -199,6 +204,9 @@
         }
         .photo{
             width: 100%;
+        }
+        .photo.experience:after{
+            content: none;
         }
     }
 </style>
