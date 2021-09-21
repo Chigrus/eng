@@ -5,3 +5,4 @@ yarn-error.log
 /__sapper__/
 /src/node_modules/@lib/sql.js
 /src/store.js
+/.env

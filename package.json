@@ -11,6 +11,7 @@
   "dependencies": {
     "cl-editor": "^2.2.0",
     "compression": "^1.7.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
