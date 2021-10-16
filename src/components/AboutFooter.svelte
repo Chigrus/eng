@@ -52,7 +52,7 @@
                 {@html aboutline.text}
                 {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.text} idline={aboutline.id} field={'text'} tedit={'full'} />{/if}
             </div>
-            {#if !isTextShow}<span class="opentext" on:click="{textShow}">Читать дале</span>{/if}
+            {#if !isTextShow}<span class="opentext" on:click="{textShow}">Читать далее</span>{/if}
         </div>
     {/each}
 </div>
