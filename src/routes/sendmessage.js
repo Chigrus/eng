@@ -8,14 +8,14 @@ export async function post(req, res) {
         port: 465,
         secure: true,
         auth: {
-            user: 'chigrus@yandex.ru',
-            pass: 'r7Lm9zAtZPSQ8',
+            user: 'marinaengwell@yandex.ru',
+            pass: 'h6M-m4n-Psr-c7F',
         },
     })
 
     let mailOptions = {
-        from: name + ' <chigrus@yandex.ru>',
-        to: 'chigrus@yandex.ru',
+        from: name + ' <marinaengwell@yandex.ru>',
+        to: 'marinaengwell@yandex.ru',
         subject: 'Сообщение от пользователя '+name+', почта '+mail,
         text: message,
         html: message,
