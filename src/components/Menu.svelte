@@ -1,4 +1,6 @@
 <script>
+    import { scrollto } from "svelte-scrollto";
+
     export let menu;
 
     function menuClick(id){
@@ -62,7 +64,7 @@
     <ul class="list">
         {#each menu as item}
             <li class="item" class:active={item.active}>
-                <a href="#{item.url}" class="link" on:click|preventDefault={() => menuClick(item.position)}>{item.title}</a>
+                <a href="#{item.url}" class="link" use:scrollto={{ element: '#'+item.url, offset: -100 }} on:click|preventDefault={() => menuClick(item.position)}>{item.title}</a>
             </li>
         {/each}
     </ul>

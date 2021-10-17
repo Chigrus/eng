@@ -1,5 +1,6 @@
 <script>
     export let about;
+    import * as animateScroll from "svelte-scrollto";
     import { isAdmin } from '../store.js';
     import Button from '../components/Button.svelte';
     import BtnEdit from '../components/BtnEdit.svelte';
@@ -29,7 +30,7 @@
                     {@html aboutline.customfield}
                     {#if $isAdmin}<BtnEdit on:getDat datablock={aboutline.customfield} idline={aboutline.id} field={'customfield'} tedit={'light'} />{/if}
                 </div>
-            <div class="line"><Button title='Запись на урок' /></div>{/if}
+            <div class="line"><Button title='Запись на урок' on:click={() => animateScroll.scrollTo({element: '#registration', offset: -100})} /></div>{/if}
         </div>
     {/each}
 </div>

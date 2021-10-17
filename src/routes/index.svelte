@@ -139,13 +139,13 @@
 		<Advantages on:getDat={(event) => { masspopup = event.detail; }} {advantages} />
 	</div>
 </div>
-<div class="wrap wrap__prices">
+<div id="services" class="wrap wrap__prices">
 	<div class="work">
 		<TopPrices on:getDat={(event) => { masspopup = event.detail; }} {topprices} />
 		<Prices on:getDat={(event) => { masspopup = event.detail; }} {prices} />
 	</div>
 </div>
-<div class="wrap wrap__reviews">
+<div id="reviews" class="wrap wrap__reviews">
 	<div class="work">
 		<TopReviews on:getDat={(event) => { masspopup = event.detail; }} {topreviews} />
 		<div class="slider">
@@ -159,19 +159,19 @@
 		</div>
 	</div>
 </div>
-<div class="wrap wrap__prices">
+<div id="registration" class="wrap wrap__prices">
 	<div class="work">
 		<TopCallBack on:getDat={(event) => { masspopup = event.detail; }} {topcallback} />
 		<CallBack />
 	</div>
 </div>
-<div class="wrap wrap__reviews">
+<div id="advantages" class="wrap wrap__reviews">
 	<div class="work">
 		<TopSkills on:getDat={(event) => { masspopup = event.detail; }} {topskills} />
 		<Skills on:getDat={(event) => { masspopup = event.detail; }} {skills} />
 	</div>
 </div>
-<div class="wrap wrap__lessons">
+<div id="gallery" class="wrap wrap__lessons">
 	<div class="work">
 		<TopLessons on:getDat={(event) => { masspopup = event.detail; }} {toplessons} />
 		<div class="slider_lessons">
@@ -191,7 +191,7 @@
 		</div>
 	</div>
 </div>
-<div class="wrap wrap__experience">
+<div id="experience" class="wrap wrap__experience">
 	<div class="work">
 		<About on:getDat={(event) => { masspopup = event.detail; }} about = {experience} />
 	</div>

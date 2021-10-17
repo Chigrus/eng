@@ -1,5 +1,6 @@
 <script>
     export let advantages;
+    import * as animateScroll from "svelte-scrollto";
     import { isAdmin } from '../store.js';
     import BtnEdit from '../components/BtnEdit.svelte';
 </script>
@@ -132,5 +133,5 @@
             {#if $isAdmin}<BtnEdit on:getDat datablock={advantage.text} idline={advantage.id} field={'text'} tedit={'light'} />{/if}
         </div>
     {/each}
-    <a href="/" class="link">Хотите больше выгод? Жмите</a>
+    <a href="/" class="link" on:click|preventDefault={() => animateScroll.scrollTo({element: '#advantages', offset: -100})}>Хотите больше выгод? Жмите</a>
 </div>
