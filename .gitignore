@@ -5,4 +5,5 @@ yarn-error.log
 /__sapper__/
 /src/node_modules/@lib/sql.js
 /src/store.js
+/src/routes/sendmessage.js
 /.env
