@@ -202,11 +202,11 @@
 		<Teaching on:getDat={(event) => { masspopup = event.detail; }} {teachings} />
 	</div>
 </div>
-<div class="wrap">
+<!-- <div class="wrap">
 	<div class="work">
 		<QuoteTeaching on:getDat={(event) => { masspopup = event.detail; }} {quoteteaching} />
 	</div>
-</div>
+</div> -->
 <div class="wrap wrap__textteaching">
 	<div class="work">
 		<TextTeaching on:getDat={(event) => { masspopup = event.detail; }} {textteaching} />
