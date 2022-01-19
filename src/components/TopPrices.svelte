@@ -54,6 +54,14 @@
         text-align: center;
         box-sizing: border-box;
     }
+
+    .subtitle{
+        width: 100%;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        margin-top: 30px;
+    }
 </style>
 
 <div class="content">
@@ -68,5 +76,6 @@
                 {#if $isAdmin}<BtnEdit on:getDat datablock={topprice.text} idline={topprice.id} field={'text'} tedit={'light'} />{/if}
             </div>
         </div>
+        <div class="subtitle">Цены указаны за урок 60 минут</div>
     {/each}    
 </div>

@@ -55,7 +55,7 @@
                 <ControlInput placeholder="Ваше имя" bind:text={senddata.name} bind:isError={errorName} />
             </div>
             <div class="cbinp r">
-                <ControlInput placeholder="Ваш e-mail" bind:text={senddata.mail} bind:isError={errorMail} />
+                <ControlInput placeholder="Ваш e-mail или телефон" bind:text={senddata.mail} bind:isError={errorMail} />
             </div>
         </div>
         <div class="callbackline">
