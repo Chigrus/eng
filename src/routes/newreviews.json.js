@@ -4,7 +4,7 @@ export async function get(req, res){
     const {status} = req.query;
     const {connection} = await init();
     if(status == 'true'){
-        connection.query('SELECT * FROM reviews', function(err, rows){
+        connection.query('SELECT * FROM reviews ORDER BY orderf', function(err, rows){
             if (err) console.log(err);
             res.writeHead(200, {
               'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ export async function get(req, res){
           });
     }
     if(status == 'false'){
-        connection.query('SELECT * FROM reviews WHERE status = true', function(err, rows){
+        connection.query('SELECT * FROM reviews WHERE status = true ORDER BY orderf', function(err, rows){
             if (err) console.log(err);
             res.writeHead(200, {
               'Content-Type': 'application/json'

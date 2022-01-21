@@ -679,5 +679,9 @@
 		.wrap__lessons .work{
 			max-width: calc(100% - 40px);
 		}
+
+		:global(.slider .carousel::before){
+			content: none;
+		}
 	}
 	</style>
