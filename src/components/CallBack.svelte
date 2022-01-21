@@ -68,48 +68,63 @@
 </div>
 
 <style>
-    .callbackform{
-        float: left;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .callbackinputs{
-        position: relative;
-        width: 100%;
-    }
-    .infosend{
-        position: absolute;
-        z-index: 1;
-        top: 30px;
-        left: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: calc(100% - 30px);
-        background-color: #fff;
-        color: green;
-        font-size: 20px;
-        text-align: center;
-    }
-    .infosend.show{
-        display: flex;
-    }
+.callbackform{
+    float: left;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.callbackinputs{
+    position: relative;
+    width: 100%;
+}
+.infosend{
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 30px);
+    background-color: #fff;
+    color: green;
+    font-size: 20px;
+    text-align: center;
+}
+.infosend.show{
+    display: flex;
+}
+.callbackline{
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+}
+.callbackline.rb{
+    justify-content: flex-end;
+}
+.cbinp{
+    width: calc(100%/2 - 15px);
+}
+
+.cbinp.r{
+    margin-left: 30px;
+}
+
+@media only screen and (max-width: 480px){
+
     .callbackline{
-        display: flex;
-        width: 100%;
-        margin-top: 30px;
-    }
-    .callbackline.rb{
-       justify-content: flex-end;
+        flex-wrap: wrap;
     }
     .cbinp{
-        width: calc(100%/2 - 15px);
+        width: calc(100%);
     }
 
     .cbinp.r{
-        margin-left: 30px;
+        margin-top: 30px;
+        margin-left: 0;
     }
+}
 </style>
