@@ -35,6 +35,7 @@
             errorReview = true;
         }
         if(reviewdata.user != '' && reviewdata.text != ''){
+            console.log(reviewdata);
             fetch('/addreview', 
                 {
                     method: 'POST',
