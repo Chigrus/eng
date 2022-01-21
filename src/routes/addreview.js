@@ -6,6 +6,7 @@ export async function post(req, res) {
     connection.query(`INSERT INTO reviews (text, user) VALUES (?, ?)`, [text, user], (err, result) => {
         if(err) {
             console.log('Ошибка записи случился');
+            console.log(err);
             res.writeHead(500);
             res.end();
             return;
