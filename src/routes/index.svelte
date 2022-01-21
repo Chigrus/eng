@@ -148,7 +148,7 @@
 <div id="reviews" class="wrap wrap__reviews">
 	<div class="work">
 		<TopReviews on:getDat={(event) => { masspopup = event.detail; }} {topreviews} />
-		<div class="slider">
+		<div class="slider rw">
 			<span class="addReview" on:click="{addReview}">Добавить отзыв</span>
 			<Carousel perPage=1>
 				<NewReviews 
@@ -398,6 +398,20 @@
 		padding: 60px 300px;
 		padding-bottom: 40px;
 		overflow: hidden;
+	}
+
+	.slider.rw{
+		height: auto;
+	}
+
+	:global(.slider.rw .slides > div){
+		display: flex;
+		background-color: #fff;
+	}
+
+	:global(.slider.rw .slides > div > div){
+		display: flex;
+		align-items: center;
 	}
 	:global(.slider .carousel){
 		box-sizing: border-box;

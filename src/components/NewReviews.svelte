@@ -27,9 +27,8 @@
     flex-wrap: wrap;
     align-items: center;
 	width: 100%;
-    min-height: 340px;
     box-sizing: border-box;
-    padding: 20px 40px;
+    padding: 20px 30px;
 	background-color: #fff;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -38,7 +37,7 @@
     float: left;
     width: 100%;
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6em;
 }
 .user{
@@ -48,11 +47,28 @@
     font-size: 16px;
     line-height: 1.6em;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 15px;
     font-style: italic;
 }
 
 :global(.slide-content .btn) {
     top: 5px;
+}
+
+@media only screen and (max-width: 480px){
+    .slide-content{
+        padding: 10px 15px;
+    }
+
+    .text{
+        font-size: 13px;
+        line-height: 1.4em;
+    }
+
+    .user{
+        font-size: 14px;
+        line-height: 1.5em;
+        margin-top: 10px;
+    }
 }
 </style>
