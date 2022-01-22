@@ -102,6 +102,12 @@
 		reviewdata.isOpen = true;
 	}
 
+	let isOpenMenu = false;
+
+	function openMenu(){
+		isOpenMenu = true;
+	}
+
 </script>
 
 <svelte:head>
@@ -123,9 +129,10 @@
 				<CompanySubName {companysubname} />
 			</div>
 			<div class="emptyFlex"></div>
-			<Menu {menu} />
+			<Menu {menu} bind:isOpenMenu={isOpenMenu} />
 			<div class="emptyFlex"></div>
 			<Phone {phone} />
+			<div class="mobMenu" on:click={openMenu}></div>
 		</div>
 	</div>
 </div>
@@ -253,6 +260,10 @@
 	
 	.emptyFlex{
 	 flex-grow: 1;
+	}
+
+	.mobMenu{
+		display: none;
 	}
 
 	.addReview{
@@ -612,6 +623,17 @@
 		.slider{
 			padding: 150px;
 		}
+		.mobMenu{
+			display: block;
+			width: 40px;
+			min-width: 40px;
+			height: 40px;
+			margin-left: 40px;
+			background-image: url(/svg/menu.svg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
 	}
 	@media only screen and (max-width: 1023px){
 		.wrap__advantages{
@@ -666,6 +688,12 @@
 		}
 	}
 
+	@media only screen and (max-width: 599px){
+		.mobMenu{
+			margin-left: 20px;
+		}
+	}
+
 	@media only screen and (max-width: 539px){
 		:global(.wrap .slider .carousel .left),
 		:global(.wrap .slider .carousel .right),
@@ -688,6 +716,12 @@
 	@media only screen and (max-width: 480px){
 		.wrap__advantages{
 			background: none;
+		}
+	}
+
+	@media only screen and (max-width: 349px){
+		.company{
+			margin-left: 10px;
 		}
 	}
 	</style>

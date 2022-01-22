@@ -17,7 +17,7 @@
 	background-size: 24px auto;
 }
 
-@media only screen and (max-width: 539px){
+@media only screen and (max-width: 599px){
     .phone{
         display: none;
     }

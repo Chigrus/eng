@@ -12,7 +12,13 @@
 
 @media only screen and (max-width: 539px){
     .companyname{
-        font-size: 20px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 349px){
+    .companyname{
+        font-size: 14px;
     }
 }
 </style>
