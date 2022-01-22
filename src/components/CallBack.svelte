@@ -126,5 +126,9 @@
         margin-top: 30px;
         margin-left: 0;
     }
+
+    .callbackline.rb{
+        justify-content: center;
+    }
 }
 </style>

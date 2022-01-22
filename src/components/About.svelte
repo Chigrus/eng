@@ -209,5 +209,13 @@
         .photo.experience:after{
             content: none;
         }
+
+        .info{
+            text-align: center;
+        }
+
+        .line{
+            justify-content: center;
+        }
     }
 </style>
