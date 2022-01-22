@@ -13,10 +13,10 @@
 <div class="content">
     {#each faq as faq, i}
     <div class="{i === openItem ? 'faqblock open' : 'faqblock'}">
-        <div class="title edit">
+        <div class="title edit" on:click={openFaq.bind(this, i)}>
             {@html faq.title}
             {#if $isAdmin}<BtnEdit on:getDat datablock={faq.title} idline={faq.id} field={'title'} tedit={'light'} />{/if}
-            <div class="btn" on:click={openFaq.bind(this, i)}></div>
+            <div class="btn"></div>
         </div>
         <div class="text edit">
             {@html faq.text}
@@ -52,6 +52,7 @@
         padding: 16px 0;
         padding-right: 50px;
         border-bottom: solid 1px rgba(255,255,255,0.2);
+        cursor: pointer;
     }
 
     .title::before{
@@ -70,7 +71,6 @@
         right: 0;
         width: 30px;
         height: 30px;
-        cursor: pointer;
     }
 
     .btn::before{
