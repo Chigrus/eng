@@ -304,13 +304,17 @@
     }
     @media only screen and (max-width: 539px){
         .title{
-            font-size: 28px;
+            font-size: 24px;
         }
         .content{
             padding: 0 15px;
         }
         .photo{
             width: 100%;
+        }
+
+        :global(.content .text p) {
+            text-align: left;
         }
     }
 </style>

@@ -12,7 +12,7 @@
             {#if $isAdmin}<BtnEdit on:getDat datablock={advantage.text} idline={advantage.id} field={'text'} tedit={'light'} />{/if}
         </div>
     {/each}
-    <a href="/" class="link" on:click|preventDefault={() => animateScroll.scrollTo({element: '#advantages', offset: -100})}>Хотите больше выгод? Жмите</a>
+    <a href="/" class="link" on:click|preventDefault={() => animateScroll.scrollTo({element: '#advantages', offset: -100})}>Больше выгод здесь</a>
 </div>
 
 <style>
@@ -132,12 +132,6 @@
     @media only screen and (max-width: 539px){
         .advantage{
             width: 100%;
-        }
-    }
-    
-    @media only screen and (max-width: 359px){
-        .link{
-            font-size: 15px;
         }
     }
 </style>

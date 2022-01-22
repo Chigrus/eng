@@ -198,7 +198,7 @@
     }
     @media only screen and (max-width: 539px){
         .title{
-            font-size: 28px;
+            font-size: 24px;
         }
         .content{
             padding: 0 15px;
@@ -216,6 +216,10 @@
 
         .line{
             justify-content: center;
+        }
+
+        :global(.about .text p) {
+            text-align: left;
         }
     }
 </style>
