@@ -684,4 +684,10 @@
 			content: none;
 		}
 	}
+
+	@media only screen and (max-width: 480px){
+		.wrap__advantages{
+			background: none;
+		}
+	}
 	</style>
