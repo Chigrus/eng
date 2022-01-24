@@ -51,6 +51,7 @@
 	import TextTeaching from '../components/TextTeaching.svelte';
 	import TopDocs from '../components/TopDocs.svelte';
 	import Docs from '../components/Docs.svelte';
+	import LightBox from '../components/LightBox.svelte';
 	import TopFaq from '../components/TopFaq.svelte';
 	import Faq from '../components/Faq.svelte';
 	import AboutFooter from '../components/AboutFooter.svelte';
@@ -108,6 +109,11 @@
 		isOpenMenu = true;
 	}
 
+	let lightbox = {
+        isOpen: false,
+        content: '',
+    };
+
 </script>
 
 <svelte:head>
@@ -119,6 +125,8 @@
 <Alert {massdel} />
 <PostAdd {massadd} />
 <ReviewsPopup {reviewdata} />
+
+<LightBox {lightbox} />
 
 <div class="flyheader">
 	<div class="work work__header">
@@ -224,7 +232,7 @@
 		<TopDocs on:getDat={(event) => { masspopup = event.detail; }} {topdocs} />
 		<div class="slider_docs">
 			<Carousel perPage={{ 1200: 3, 768: 2 }}>
-				<Docs on:getDat={(event) => { masspopup = event.detail; }} {docs} />
+				<Docs on:setLightBox={(event) => { lightbox = event.detail; }} on:getDat={(event) => { masspopup = event.detail; }} {docs} />
 			</Carousel>
 		</div>
 	</div>
@@ -722,6 +730,10 @@
 	@media only screen and (max-width: 349px){
 		.company{
 			margin-left: 10px;
+		}
+
+		:global(.slider_docs .carousel > ul li){
+			margin: 5px 3px;
 		}
 	}
 	</style>

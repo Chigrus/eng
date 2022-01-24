@@ -1,8 +1,11 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
     import { isAdmin } from '../store.js';
     import BtnEdit from '../components/BtnEdit.svelte';
   	
     export let docs;
+
+    const dispatch = createEventDispatcher();
 </script>
 
 {#each docs as doc}
@@ -15,7 +18,7 @@
             {@html doc.text}
             {#if $isAdmin}<BtnEdit on:getDat datablock={doc.text} idline={doc.id} field={'text'} tedit={'full'} />{/if}
         </div>
-        <div class="look">Смотреть</div>
+        <div class="look" on:click={() => dispatch('setLightBox', {isOpen: true, content: doc.image})}>Смотреть</div>
     </div>
 {/each} 
 
