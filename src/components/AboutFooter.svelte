@@ -222,7 +222,7 @@
         position: relative;
         float: left;
         width: 100%;
-        max-height: 140px;
+        max-height: 138px;
         overflow: hidden;
         font-family: Cambria;
         font-size: 18px;
@@ -231,6 +231,32 @@
 
     .text__container.open .text{
         max-height: inherit;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)){
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+        padding-left: 60px;
+        padding-right: 25px;
+        text-align: left;
+    }
+
+    :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)::before){
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: rgb(141, 35, 38);
+        background-image: url(/svg/skills/star.svg);
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 
     .opentext{
@@ -295,11 +321,33 @@
             padding-left: 0;
             margin-top: 40px;
         }
+
+        :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)){
+            padding-left: 40px;
+            padding-right: 15px;
+        }
+
+        :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)::before){
+            width: 34px;
+            height: 34px;
+            background-size: 16px 16px;
+        }
     }
     @media only screen and (max-width: 767px){
         .info{
             width: 100%;
             margin-left: 0;
+        }
+        :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)){
+            width: 100%;
+            padding-left: 45px;
+            padding-right: 0;
+        }
+
+        :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)::before){
+            width: 34px;
+            height: 34px;
+            background-size: 16px 16px;
         }
     }
     @media only screen and (max-width: 539px){
@@ -312,9 +360,22 @@
         .photo{
             width: 100%;
         }
-
         :global(.content .text p) {
             text-align: left;
+            font-size: 17px;
+        }
+
+        :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)){
+            padding-left: 0;
+            padding-top: 45px;
+        }
+
+        :global(.text__container .text p:nth-child(n+3):nth-child(-n+8)::before){
+            top: -16px;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: -20px;
         }
     }
 </style>

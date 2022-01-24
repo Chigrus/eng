@@ -44,6 +44,10 @@
     font-size: 18px;
 }
 
+:global(.lesson .text p){
+    text-align: left;
+}
+
 @media only screen and (max-width: 1023px){
     .text{
         font-size: 16px;
