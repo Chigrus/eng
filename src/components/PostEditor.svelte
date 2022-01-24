@@ -47,7 +47,7 @@
                     closePopup();
                     location.reload();
                 });
-            }, 'image/jpeg');
+            }, 'image/jpeg', 1);
         };
     }
 

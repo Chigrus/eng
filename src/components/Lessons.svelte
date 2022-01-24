@@ -46,6 +46,11 @@
 
 :global(.lesson .text p){
     text-align: left;
+    color: #000;
+}
+
+:global(.lesson .text p:first-child){
+    margin-top: 0;
 }
 
 @media only screen and (max-width: 1023px){

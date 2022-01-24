@@ -354,6 +354,9 @@
         .title{
             font-size: 24px;
         }
+        .text{
+            max-height: 155px;
+        }
         .content{
             padding: 0 15px;
         }
