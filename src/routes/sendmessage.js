@@ -1,4 +1,6 @@
-const nodemailer = require('nodemailer')
+require('dotenv').config();
+
+const nodemailer = require('nodemailer');
 
 export async function post(req, res) {
     const {name, mail, message} = req.body.data;
@@ -8,8 +10,8 @@ export async function post(req, res) {
         port: 465,
         secure: true,
         auth: {
-            user: 'marinaengwell@yandex.ru',
-            pass: 'h6M-m4n-Psr-c7F',
+            user: process.env.POST_USER,
+            pass: process.env.POST_PASS,
         },
     })
 
@@ -26,7 +28,7 @@ export async function post(req, res) {
             console.log(error);
             res.end(JSON.stringify({status: false}));
         }else{
-            console.log(result)    
+            //console.log(result)    
             res.end(JSON.stringify({status: true}));
         }
     });

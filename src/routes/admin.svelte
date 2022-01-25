@@ -15,7 +15,7 @@
         {
             name: 'password',
             placeholder: 'Ваш пароль',
-            type: 'text',
+            type: 'password',
             value: '',
             class: 'input',
             error: false,
@@ -76,6 +76,12 @@
                 <div class="lineForm">
                     <span class="titleError">{line.erEmpty.isShow ? line.erEmpty.title : ''}</span>
                     <input class="{line.class}" class:error={line.error} bind:value="{line.value}" on:focus={() => onFocus(i)} placeholder="{line.placeholder}" type="text" />
+                </div>
+            {/if}
+            {#if line.type == 'password'}
+                <div class="lineForm">
+                    <span class="titleError">{line.erEmpty.isShow ? line.erEmpty.title : ''}</span>
+                    <input class="{line.class}" class:error={line.error} bind:value="{line.value}" on:focus={() => onFocus(i)} placeholder="{line.placeholder}" type="password" />
                 </div>
             {/if}
         {/each}
