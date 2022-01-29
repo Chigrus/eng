@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+host: engwell.ru
